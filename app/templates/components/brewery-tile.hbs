@@ -1,0 +1,30 @@
+{{#if addNewBrewery}}
+  <h1>New Brewery</h1>
+    <div>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          {{input value=name id="name"}}
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          {{input value=city id="city"}}
+        </div>
+
+        <div class="form-group">
+          <label for="latitude">Latitude</label>
+          {{input value=latitude id="latitude"}}
+        </div>
+
+        <div class="form-group">
+          <label for="longitude">Longitude</label>
+          {{input value=longitude id="longitude"}}
+        </div>
+
+        <button {{action 'addBrewery' brewery}}>Save</button>
+      </form>
+    </div>
+{{else}}
+    <button {{action 'breweryFormShow'}}>New Brewery</button>
+{{/if}}
