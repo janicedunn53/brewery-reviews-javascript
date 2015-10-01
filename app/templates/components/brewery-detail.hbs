@@ -1,3 +1,11 @@
 <h3>Reviews of {{brewery.name}}</h3>
 
+<ul>
+  {{#each brewery.reviews as |review|}}
+    {{review-tile review=review}}
+  {{/each}}
+</ul>
+
+{{add-review addReview=addReview brewery=brewery}}
+<br>
 {{google-map brewery=brewery}}

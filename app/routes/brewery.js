@@ -5,6 +5,16 @@ export default Ember.Route.extend({
     return this.store.findRecord('brewery', params.brewery_id);
   },
   actions: {
+    addReview(params) {
+      var newReview = this.store.createRecord('review', params);
+      var brewery = params.brewery;
+      brewery.get('reviews').addObject(newReview);
+      newReview.save().then(function() {
+        return brewery.save();
+      });
+      this.transitionTo('brewery', params.brewery);
+    },
+
     delete(brewery) {
       var review_deletions = brewery.get('reviews').map(function(review) {
         return review.destroyRecord();
