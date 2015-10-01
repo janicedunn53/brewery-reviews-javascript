@@ -1,0 +1,6 @@
+<h2>{{model.name}}</h2>
+<h5>{{model.city}}</h5>
+
+<button {{action 'delete' model}}class="btn btn-danger">Delete</button>
+
+{{brewery-detail brewery=model}}

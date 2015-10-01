@@ -8,8 +8,6 @@ export default Ember.Route.extend({
     addBrewery(params) {
       var brewery = this.store.createRecord('brewery', params);
       brewery.save();
-      debugger;
-      console.log('in save index.js')
       this.transitionTo('index');
     }
   }

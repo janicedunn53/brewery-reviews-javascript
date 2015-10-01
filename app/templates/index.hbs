@@ -1,3 +1,9 @@
 <h2>Brewery Reviews</h2>
 
-{{brewery-tile addBrewery='addBrewery'}}
+<ul>
+  {{#each model as |brewery|}}
+    {{brewery-tile brewery=brewery}}
+  {{/each}}
+</ul>
+
+{{add-brewery addBrewery='addBrewery'}}
